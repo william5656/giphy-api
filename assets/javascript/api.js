@@ -37,7 +37,7 @@ var topics = ["One-Punch Man","Naruto","Fullmetal Alchemist: Brotherhood","Kimi 
               animeImage.addClass("gif")
               animeImage.attr("data-state", "still")
               animeImage.attr("src", results[i].images.fixed_height_still.url);
-  
+              
               gifDiv.prepend(p);
               gifDiv.prepend(animeImage);
   
@@ -46,19 +46,18 @@ var topics = ["One-Punch Man","Naruto","Fullmetal Alchemist: Brotherhood","Kimi 
         });   
     })
 
-    $(".gif").on("click", function() {
-       
-        console.log("hi");
-        var state = $(this).attr("data-state");
-        console.log(state);
-
-        if(state === "still"){
-            $(this).attr("src", $(this).attr("data-animate"));
-            $(this).attr("data-state", "animate");
-        }
-        else{
-            $(this).attr("src", $(this).attr("data-still"));
-            $(this).attr("data-state", "still");
-        }
-      });
+    $(document).on('click', ".gif", function() {
+        var src = $(this).attr("src");
+         var state = $(this).attr("data-state");
+        console.log(this);
+         if(state === "still"){
+            $(this).attr('src', src.replace(/\_s.gif/i, ".gif"))
+             $(this).attr("data-state", "animate");
+             
+         }
+         else{
+             $(this).attr("src", src.replace(/\.gif/i, "_s.gif"));
+             $(this).attr("data-state", "still");
+         }
+       });
 })
