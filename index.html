@@ -8,8 +8,23 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="./assets/javascript/api.js"></script>
 </head>
+
 <body>
-    <div class = "Topic-buttons"> </div>
-    <div class = "gifs row"></div>
+    <div class = "Topic-buttons mb-1"> </div>
+    <form class = "row justify-content-end" id="movie-form">
+        <label for="anime-input"></label>
+        <input type="text" id="anime-input"><br>
+        <!-- Button triggers new movie to be added -->
+        <input  class = "btn btn-info " id="add-anime" type="submit" value="Add a anime">
+    </form>
+    <div class = "container p-0">
+        <div class = "row color mt-1 p-0">
+            <div class = "col-10">
+                <div class = "gifs row p-0"> 
+                    
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
