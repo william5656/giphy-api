@@ -33,13 +33,11 @@ $(".color").hide()
               var gifDiv = $("<div class='item'>");
   
               var rating = results[i].rating;
-  
               var p = $("<p>").text("Rating: " + rating);
               var animeImage = $("<img>");
-              animeImage.addClass("gif ")
-              animeImage.attr("data-state", "still")
+              animeImage.addClass("gif ");
+              animeImage.attr("data-state", "still");
               animeImage.attr("src", results[i].images.fixed_height_still.url);
-              
               gifDiv.prepend(p);
               gifDiv.prepend(animeImage);
   
